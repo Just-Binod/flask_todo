@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock title %} - My-Todo-App</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons for social media and other icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <a class="text-2xl font-bold text-gray-800" href="/">MyTodo</a>
+          </div>
+          <div class="flex items-center">
+            <button
+              class="sm:hidden text-gray-600 hover:text-gray-800 focus:outline-none"
+              id="navbar-toggle"
+              aria-label="Toggle navigation menu"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="hidden sm:flex sm:items-center" id="navbar-menu">
+              <a
+                class="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md"
+                href="/about"
+                >About</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="flex-1">{% block body %} {% endblock body %}</main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+      <div
+        class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-center gap-6"
+      >
+        <a
+          href="https://www.linkedin.com/in/binod-raj-pant-303767330/"
+          target="__blank"
+          class="text-white hover:text-gray-300"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin fa-lg"></i>
+        </a>
+      </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu toggle -->
+    <script>
+      document.getElementById("navbar-toggle").addEventListener("click", () => {
+        const menu = document.getElementById("navbar-menu");
+        menu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

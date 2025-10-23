@@ -1,0 +1,102 @@
+{% extends "base.html" %} {% block title %} About {% endblock title %} {% block
+body %}
+<!-- Main content container -->
+<div class="container mx-auto my-8 px-4 sm:px-6 lg:px-8">
+  <!-- Page Heading -->
+  <h1 class="text-3xl font-bold text-gray-800 mb-4">About This ToDo App</h1>
+
+  <!-- Flash messages -->
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if
+  messages %}
+  <div class="mb-6">
+    {% for category, message in messages %}
+    <div
+      class="p-4 mb-4 text-sm rounded-lg {% if category == 'success' %} bg-green-100 text-green-700 {% elif category == 'error' %} bg-red-100 text-red-700 {% else %} bg-blue-100 text-blue-700 {% endif %}"
+      role="alert"
+    >
+      {{ message }}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %} {% endwith %}
+
+  <!-- Introductory paragraph -->
+  <p class="text-lg text-gray-600 mb-6">
+    This ToDo app is designed to help you organize and manage your tasks
+    efficiently. You can add new tasks, update existing ones, mark tasks as
+    completed, and delete tasks you no longer need.
+  </p>
+
+  <!-- Horizontal line for separation -->
+  <hr class="my-6 border-gray-300" />
+
+  <!-- Instructions for using the app -->
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4">How to Use the App</h2>
+  <ul class="list-group space-y-4">
+    <!-- List item for adding a new task -->
+    <li class="bg-white p-4 rounded-lg shadow-sm">
+      <strong class="text-gray-800">Add a New Task:</strong> On the home page,
+      fill in the "Todo Title" and "Todo Description" fields, then click the
+      "Add Todo" button. Your task will be saved and displayed in the task list.
+    </li>
+    <!-- List item for marking a task as completed -->
+    <li class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-green-500">
+      <strong class="text-gray-800">Mark a Task as Completed:</strong> In the
+      task list, click the <span class="text-green-600">"Complete"</span> button
+      next to a task to mark it as done. Completed tasks are highlighted in
+      green and labeled as "Completed." Click
+      <span class="text-green-600">"Undo"</span> to mark it as incomplete again.
+    </li>
+    <!-- List item for updating a task -->
+    <li class="bg-white p-4 rounded-lg shadow-sm">
+      <strong class="text-gray-800">Update a Task:</strong> Click the
+      <span class="text-blue-600">"Update"</span> button next to a task to edit
+      its title or description. Save your changes by clicking "Update Todo."
+    </li>
+    <!-- List item for deleting a task -->
+    <li class="bg-white p-4 rounded-lg shadow-sm">
+      <strong class="text-gray-800">Delete a Task:</strong> Click the
+      <span class="text-red-600">"Delete"</span> button next to a task to
+      permanently remove it. You’ll be prompted to confirm the deletion.
+    </li>
+    <!-- List item for searching tasks -->
+    <li class="bg-white p-4 rounded-lg shadow-sm">
+      <strong class="text-gray-800">Search Tasks:</strong> Use the search bar on
+      the home page to find tasks by title or description.
+    </li>
+    <!-- List item for filtering tasks -->
+    <li class="bg-white p-4 rounded-lg shadow-sm">
+      <strong class="text-gray-800">Filter Tasks:</strong> Use the filter
+      dropdown to view all, completed, or incomplete tasks.
+    </li>
+  </ul>
+
+  <!-- Horizontal line for separation -->
+  <hr class="my-6 border-gray-300" />
+
+  <!-- Features section -->
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4">Features</h2>
+  <ul class="list-disc list-inside text-gray-600 mb-6">
+    <li>Modern and intuitive interface for seamless task management.</li>
+    <li>Mark tasks as completed with a single click, with visual feedback.</li>
+    <li>Persistent task storage in a database.</li>
+    <li>Quick actions to add, update, complete, and delete tasks.</li>
+    <li>Search and filter functionality to easily find tasks.</li>
+    <li>Responsive design for use on desktop and mobile devices.</li>
+    <li>Accessible interface with ARIA attributes for screen readers.</li>
+  </ul>
+
+  <!-- Horizontal line for separation -->
+  <hr class="my-6 border-gray-300" />
+
+  <!-- Contact section -->
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4">Contact</h2>
+  <p class="text-lg text-gray-600">
+    If you have any questions or feedback about this app, feel free to reach out
+    at
+    <a href="mailto:support@todoapp.com" class="text-blue-600 hover:underline"
+      >support@todoapp.com</a
+    >!
+  </p>
+</div>
+{% endblock body %}
